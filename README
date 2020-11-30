@@ -1,0 +1,28 @@
+
+Domenico,
+ 
+Thanks for looking.  Yes,  I certainly have the correct access key and secret key for the tenant account.  I can comment out the VRF portion of the resources.tf file, and it pushes the Tenant, Schema, Template to MSO.   I can then go to the created template on MSO UI and then on the sharedTemplate, create the VRF with region / subnet / hub config and it pushes the VRF to the AWS Tenant account and the physical ACI Fabrics with no issues.   This proves that the tenant that got created with Terraform was associated with the correct aws tenant account with proper credentials.
+ 
+I am also running terraform to spin up ec2 instances and using Terraform remote provisioners to install packages on the ec2s  with the same aws tenant account and  aws access key and secret key.    So, it’s definitely not that.   Maybe, I’m running the wrong terraform resource block to create the vrf ? I’ve been poking around for more than 10 hours doing all sorts of trial and error and still have not been able to make it work.
+ 
+I’m including all my code, here ( the MSO credentials and aws access keys and passwords are on the vars.tf file and I’ve changed them before emailing to you).  If you get a change to look I will really appreciate it.  Maybe you can spot something that I’m overlooking.  Any help is greatly appreciated !
+ 
+aciadmin@ubuntu-jump:~/Terraform/ACI/mso_modules$ terraform version
+Terraform v0.13.5
+ 
+MSO is 3.0.2d
+ACI is 5.0.2e
+
+
+I’m following Terraform best practices of calling the tf files from a different root module.
+My directory structure is shown below.  My root tf file is called mso-main.tf. 
+ 
+aciadmin@ubuntu-jump:~/Terraform/ACI$ tree
+.
+├── mso
+│   ├── mso-main.tf
+└── mso_modules
+    ├── mso_provider.tf
+    ├── resources.tf
+    ├── vars.tf
+    └── versions.tf
