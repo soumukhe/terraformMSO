@@ -46,10 +46,10 @@ variable "user_associations" {
 variable "awsstuff" {
   type = map
   default = {
-    aws_account_id         = "970521513280"    #  Note that the aws acct# and access_key, secret_key has been changed before upload to git
+    aws_account_id         = "aws_accoint-number"    #  Note that the aws acct# and access_key, secret_key has been removed before upload to git
     is_aws_account_trusted = false
-    aws_access_key_id      = "AKIA6D536CJKPCI5V5TX"
-    aws_secret_key         = "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"
+    aws_access_key_id      = "the_secret_keyID-FromAWSAccount"
+    aws_secret_key         = "secret_key-FromAWSAccount"
   }
 }
 
