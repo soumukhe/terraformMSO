@@ -81,7 +81,7 @@ resource "mso_schema_site_vrf_region_cidr" "vrfRegionCidr" {  # this did not wor
 }
 
 
-resource "mso_schema_site_vrf_region" "vrfRegion" {
+resource "mso_schema_site_vrf_region" "vrfRegion" {  # and this also does not work
   schema_id          = mso_schema.schema1.id
   template_name      = var.schema.template_name1
   site_id            = data.mso_site.site3.id
